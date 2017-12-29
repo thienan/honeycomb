@@ -1,11 +1,9 @@
-'use strict';
+/* eslint-env node */
 
-const webpack = require('webpack')
 const path = require('path')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
-const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin
 const PRODUCTION = process.env.NODE_ENV === 'production'
-
 const libraryName = 'Honeycomb'
 
 let plugins = []
@@ -13,7 +11,7 @@ let filename = libraryName.toLowerCase()
 let devtool
 
 if (PRODUCTION) {
-    plugins.push(new UglifyJsPlugin({ compress: { warnings: false } }))
+    plugins.push(new UglifyJsPlugin())
     filename += '.min.js'
 } else {
     filename += '.js'
