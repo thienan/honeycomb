@@ -1,20 +1,19 @@
 import { isArray } from 'axis.js'
 
 import Point from '../point'
-import Grid from './class'
+import arrayForwardProxy from './proxy'
 import * as statics from './statics'
-// import * as methods from './prototype'
+import * as methods from './prototype'
 
-export default function createGridFactoryFactory({ createHexFactory }) {
+export default function createGridFactory({ createHexFactory }) {
     return function createFactory(Hex = createHexFactory()) {
-        // static methods
-        Object.assign(GridFactory, {
+        Object.assign(Grid, {
             // properties:
-            // if Hex isn't unbound, it's `this` will reference Gridfactory, code smell?
+            // if Hex isn't unbound, it's `this` will reference Grid, code smell?
             Hex: Hex.bind(),
 
             // methods
-            isValidHex: statics.isValidHexFactory({ Grid }),
+            isValidHex: statics.isValidHex,
             pointToHex: statics.pointToHexFactory({ Point, Hex }),
             hexToPoint: statics.hexToPoint,
             colSize: statics.colSizeFactory({ Hex }),
@@ -25,13 +24,21 @@ export default function createGridFactoryFactory({ createHexFactory }) {
             rectangle: statics.rectangleFactory({ Grid, Hex })
         })
 
-        // instance methods
-        Object.assign(
-            Grid.prototype,
+        const prototype = Object.assign(
+            // any property missing in a grid instance is forwarded to the Grid prototype (basic prototypal inheritance)
+            // any property missing in the Grid prototype is forwarded to the Array prototype (thanks to arrayForwardProxy)
+            Object.create(arrayForwardProxy),
             {
                 // properties:
                 // used internally for type checking
-                __isHoneycombGrid: true
+                __isHoneycombGrid: true,
+
+                // methods
+                includes: methods.includesFactory({ Grid }),
+                indexOf: methods.indexOfFactory({ Grid }),
+                push: methods.pushFactory({ Grid }),
+                splice: methods.spliceFactory({ Grid }),
+                unshift: methods.unshiftFactory({ Grid })
             }
         )
 
@@ -72,7 +79,7 @@ export default function createGridFactoryFactory({ createHexFactory }) {
          * grid.pointToHex([ 20, 40 ])  // { x: -1, y: 27, z: -25 }
          * grid2.pointToHex([ 20, 40 ]) // { x: 0, y: 1, z: -1 }
          */
-        function GridFactory(gridLikeOrHex, ...hexes) {
+        function Grid(gridLikeOrHex, ...hexes) {
             if (isArray(gridLikeOrHex)) {
                 hexes = gridLikeOrHex
             } else {
@@ -83,9 +90,12 @@ export default function createGridFactoryFactory({ createHexFactory }) {
                 return hexes.slice(0)
             }
 
-            return new Grid(...hexes.filter(Grid.isValidHex))
+            return Object.assign(
+                Object.create(prototype),
+                hexes.filter(Grid.isValidHex)
+            )
         }
 
-        return GridFactory
+        return Grid
     }
 }
