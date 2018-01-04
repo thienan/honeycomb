@@ -24,23 +24,20 @@ export default function createGridFactory({ createHexFactory }) {
             rectangle: statics.rectangleFactory({ Grid, Hex })
         })
 
-        const prototype = Object.assign(
-            // any property missing in a grid instance is forwarded to the Grid prototype (basic prototypal inheritance)
-            // any property missing in the Grid prototype is forwarded to the Array prototype (thanks to arrayForwardProxy)
-            Object.create(arrayForwardProxy),
-            {
-                // properties:
-                // used internally for type checking
-                __isHoneycombGrid: true,
+        const prototype = {
+            // properties:
+            // used internally for type checking
+            __isHoneycombGrid: true,
 
-                // methods
-                includes: methods.includesFactory({ Grid }),
-                indexOf: methods.indexOfFactory({ Grid }),
-                push: methods.pushFactory({ Grid }),
-                splice: methods.spliceFactory({ Grid }),
-                unshift: methods.unshiftFactory({ Grid })
-            }
-        )
+            // methods
+            includes: methods.includesFactory({ Grid }),
+            indexOf: methods.indexOfFactory({ Grid }),
+            push: methods.pushFactory({ Grid }),
+            splice: methods.spliceFactory({ Grid }),
+            unshift: methods.unshiftFactory({ Grid })
+        }
+        // thanks to arrayForwardProxy, any properties missing in the Grid prototype are forwarded to Array.prototype
+        Object.setPrototypeOf(prototype, arrayForwardProxy)
 
         /**
          * @module src/grid
