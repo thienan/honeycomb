@@ -143,21 +143,21 @@ export function parallelogramFactory({ Grid, Hex }) {
             5: ['z', 'x']
         }
         const [firstCoordinate, secondCoordinate] = DIRECTIONS[direction]
-        const hexes = []
+        const grid = Grid()
 
         for (let first = 0; first < width; first++) {
-            for (let i = 0, second = 0; second < height; second++) {
+            for (let second = 0; second < height; second++) {
                 // add the hex manually (instead of using Hex#add) for better performance
                 const hex = Hex({
                     [firstCoordinate]: first + start.x,
                     [secondCoordinate]: second + start.y
                 })
                 onCreate(hex)
-                hexes[i] = hex
+                grid.push(hex)
             }
         }
 
-        return Grid(hexes)
+        return grid
     }
 }
 
@@ -199,18 +199,18 @@ export function triangleFactory({ Grid, Hex }) {
             }
         }
         const { yStart, yEnd } = DIRECTIONS[direction]
-        const hexes = []
+        const grid = Grid()
 
         for (let x = 0; x < size; x++) {
-            for (let i = 0, y = yStart(x); y < yEnd(x); y++) {
+            for (let y = yStart(x); y < yEnd(x); y++) {
                 // add the hex manually (instead of using Hex#add) for better performance
                 const hex = Hex(x + start.x, y + start.y)
                 onCreate(hex)
-                hexes[i] = hex
+                grid.push(hex)
             }
         }
 
-        return Grid(hexes)
+        return grid
     }
 }
 
@@ -239,21 +239,21 @@ export function hexagonFactory({ Grid, Hex }) {
         radius -= 1
         center = Hex(center)
 
-        const hexes = []
+        const grid = Grid()
 
         for (let x = -radius; x <= radius; x++) {
             const startY = Math.max(-radius, -x - radius)
             const endY = Math.min(radius, -x + radius)
 
-            for (let i = 0, y = startY; y <= endY; y++) {
+            for (let y = startY; y <= endY; y++) {
                 // add the hex manually (instead of using Hex#add) for better performance
                 const hex = Hex(x + center.x, y + center.y)
                 onCreate(hex)
-                hexes[i] = hex
+                grid.push(hex)
             }
         }
 
-        return Grid(hexes)
+        return grid
     }
 }
 
@@ -297,22 +297,26 @@ export function rectangleFactory({ Grid, Hex }) {
         const [firstCoordinate, secondCoordinate] = DIRECTIONS[direction]
         const firstStop = start.isPointy() ? width : height
         const secondStop = start.isPointy() ? height : width
+        // const grid = Grid()
         const hexes = []
+        let i = 0
 
         for (let second = 0; second < secondStop; second++) {
             const secondOffset = Math.floor(second / 2)
 
-            for (let i = 0, first = -secondOffset; first < firstStop - secondOffset; first++) {
+            for (let first = -secondOffset; first < firstStop - secondOffset; first++) {
                 // add the hex manually (instead of using Hex#add) for better performance
                 const hex = Hex({
                     [firstCoordinate]: first + start.x,
                     [secondCoordinate]: second + start.y
                 })
                 onCreate(hex)
-                hexes[i] = hex
+                // grid.push(hex)
+                hexes[i++] = hex
             }
         }
 
+        // return grid
         return Grid(hexes)
     }
 }

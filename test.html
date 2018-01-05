@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+</head>
+<body>
+    <script src="dist/honeycomb.js"></script>
+    <script>
+        // TODO:
+        // * don't merge `this` when creating hexes?
+        // * prevent duplicated hexes in grid?
+
+        const Grid = Honeycomb.Grid.createFactory()
+        const { Hex } = Grid
+
+        g = Grid.rectangle({ width: 2, height: 2 })
+
+        console.log('Array.prototype methods',Object.getOwnPropertyNames(Array.prototype));
+        console.log('grid',g);
+        console.log('grid.length',g.length);
+        g.length = 0
+        console.log('grid after length=0',g);
+        console.log('grid.length',g.length);
+        g.forEach(h => console.log(h))
+
+        // console.time()
+        // Grid.rectangle({ width: 1000, height: 1000 })
+        // console.timeEnd()
+    </script>
+</body>
+</html>

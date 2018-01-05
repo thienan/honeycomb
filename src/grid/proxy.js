@@ -5,6 +5,7 @@ export default new Proxy({}, {
     },
 
     set(target, property, value, receiver) {
+        // console.log('proxy set',property,value)
         if (value.__isHoneycombHex) {
             return Reflect.set(target, property, value, receiver)
         }

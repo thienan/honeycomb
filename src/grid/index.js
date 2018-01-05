@@ -5,7 +5,7 @@ import arrayForwardProxy from './proxy'
 import * as statics from './statics'
 import * as methods from './prototype'
 
-export default function createGridFactory({ createHexFactory }) {
+export default function createFactoryFactory({ createHexFactory }) {
     return function createFactory(Hex = createHexFactory()) {
         Object.assign(Grid, {
             // properties:
@@ -87,9 +87,12 @@ export default function createGridFactory({ createHexFactory }) {
                 return hexes.slice(0)
             }
 
+            hexes = hexes.filter(Grid.isValidHex)
+            // let length = hexes.length
+
             return Object.assign(
                 Object.create(prototype),
-                hexes.filter(Grid.isValidHex)
+                hexes
             )
         }
 

@@ -2,24 +2,24 @@ import { expect } from 'chai'
 import sinon from 'sinon'
 
 import createHexFactory from '../../src/hex'
-import Grid from '../../src/grid/class'
 import * as statics from '../../src/grid/statics'
 
 const Hex = createHexFactory()
 
 describe('isValidHex', () => {
-    it('calls Grid.isValidHex', () => {
-        sinon.spy(Grid, 'isValidHex')
+    it('returns whether the passed value has the __isHoneycombHex property', () => {
+        expect(statics.isValidHex(Hex())).to.be.true
 
-        const isValidHex = statics.isValidHexFactory({ Grid })
-        isValidHex('value')
-
-        expect(Grid.isValidHex).to.have.been.calledWith('value')
-
-        Grid.isValidHex.restore()
+        expect(statics.isValidHex()).to.be.false
+        expect(statics.isValidHex(undefined)).to.be.false
+        expect(statics.isValidHex(null)).to.be.false
+        expect(statics.isValidHex(42)).to.be.false
+        expect(statics.isValidHex('string')).to.be.false
+        expect(statics.isValidHex([])).to.be.false
+        expect(statics.isValidHex({})).to.be.false
+        expect(statics.isValidHex(true)).to.be.false
     })
 })
-
 describe('pointToHex', function() {
     let Point, isPointy, hexResult, Hex, round, pointToHex, point
 
