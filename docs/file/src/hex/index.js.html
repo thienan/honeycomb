@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/hex/index.js | honeycomb-grid</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Create hexagon grids easily. Written in javascript."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="honeycomb-grid"><meta property="twitter:description" content="Create hexagon grids easily. Written in javascript."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/flauwekeul/honeycomb"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-COMPASS_DIRECTION">COMPASS_DIRECTION</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#grid">grid</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get">get</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hexesBetween">hexesBetween</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setFactory">setFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-grid">grid</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#hex">hex</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-extendHexFactory">extendHexFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cartesianToCube">cartesianToCube</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-coordinates">coordinates</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cube">cube</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cubeToCartesian">cubeToCartesian</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-distance">distance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-equalsFactory">equalsFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-height">height</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isFlat">isFlat</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isPointy">isPointy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-nudge">nudge</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-oppositeCornerDistance">oppositeCornerDistance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-oppositeSideDistance">oppositeSideDistance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toString">toString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-width">width</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-thirdCoordinate">thirdCoordinate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DIAGONAL_DIRECTION_COORDINATES">DIAGONAL_DIRECTION_COORDINATES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DIRECTION_COORDINATES">DIRECTION_COORDINATES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EPSILON">EPSILON</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-OFFSET">OFFSET</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ORIENTATION">ORIENTATION</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-staticMethods">staticMethods</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-hex">hex</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#point">point</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-PointFactory">PointFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addFactory">addFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-divideFactory">divideFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-multiplyFactory">multiplyFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-subtractFactory">subtractFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-point">point</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/hex/index.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { isObject, isNumber, isArray } from &apos;axis.js&apos;
+
+import { ensureXY } from &apos;../utils&apos;
+import { ORIENTATION, OFFSET } from &apos;./constants&apos;
+import PointFactory from &apos;../point&apos;
+import * as statics from &apos;./statics&apos;
+import * as methods from &apos;./prototype&apos;
+
+const Point = PointFactory({ ensureXY })
+
+export const staticMethods = {
+    thirdCoordinate: statics.thirdCoordinate
+}
+
+export default function extendHexFactory({ ensureXY }) {
+    /**
+     * @function extendHex
+     *
+     * @memberof Honeycomb
+     * @static
+     *
+     * @description
+     * This function can be used to create custom hexes by extending the default Hex prototype.
+     *
+     * All properties of the object passed to `extendHex()` will be added to the prototype of the resulting {@link Hex} factory.
+     * To add properties to individual hexes (instances), pass them to the {@link Hex} factory.
+     *
+     * @todo validate orientation, size, origin
+     * @todo warn when properties are overriden
+     *
+     * @param {Object} [prototype={}]   An object that&apos;s used as the prototype for all hexes in a grid.
+     *                                  **Warning:** properties in this object will overwrite properties with the same name in the default prototype.
+     *
+     * @returns {Hex}                   A function to produce hexes that are all linked to the same prototype.
+     *
+     * @example
+     * const Hex = Honeycomb.extendHex({
+     *     size: 50,
+     *     orientation: &apos;flat&apos;,
+     *     customProperty: `I&apos;m custom &#x1F603;`,
+     *     customMethod() {
+     *         return `${this.customProperty} and called from a custom method &#x1F60E;`
+     *     }
+     * })
+     * const hex = Hex(5, -1)
+     *
+     * hex.coordinates()    // { x: 5, y: -1 }
+     * hex.size             // 50
+     * hex.customProperty   // I&apos;m custom &#x1F603;
+     * hex.customMethod()   // I&apos;m custom &#x1F603; and called from a custom method &#x1F60E;
+     *
+     * // every hex created with Hex() shares these properties:
+     * const hex2 = Hex(3, 0)
+     * hex2.size            // 50
+     * hex2.customProperty  // I&apos;m custom &#x1F603;
+     *
+     * // to set properties on individual hexes, pass them to Hex():
+     * const hex3 = Hex(-2, -1, { instanceProperty: `I&apos;m a unique snowflake &#x1F60C;` })
+     * hex3.instanceProperty    // I&apos;m a unique snowflake &#x1F60C;
+     */
+    return function extendHex(prototype = {}) {
+        const defaultPrototype = {
+            /**
+             * Used internally for type checking
+             *
+             * @memberof Hex#
+             * @private
+             */
+            __isHoneycombHex: true,
+            /**
+             * Either pointy or flat. Defaults to `pointy`.
+             *
+             * @memberof Hex#
+             * @type {string}
+             * @default ORIENTATION.pointy
+             */
+            orientation: ORIENTATION.pointy,
+            /**
+             * Distance from a hex&apos;s top left corner (as if it were a rectange). Defaults to `Point(0)`.
+             * Can be anything the {@link Honeycomb.Point} factory accepts.
+             * When a {@link Hex#toPoint|hex is converted to a point}, it is converted to this origin.
+             *
+             * @memberof Hex#
+             * @type {point}
+             * @default 0
+             */
+            origin: 0,
+            /**
+             * A hex&apos;s radius or the length of any of its sides. Defaults to `1`.
+             *
+             * @memberof Hex#
+             * @type {number}
+             * @default 1
+             */
+            size: 1,
+            /**
+             * Used to calculate the coordinates of rows for pointy hexes and columns for flat hexes.
+             * Defaults to `-1` (odd offset).
+             * See {@link OFFSET} for details.
+             * See {@link https://www.redblobgames.com/grids/hexagons/#coordinates-offset|redblobgames.com} why this is needed.
+             *
+             * @memberof Hex#
+             * @type {number}
+             * @default -1
+             * @see OFFSET
+             */
+            offset: OFFSET.odd,
+            /**
+             * Getter for `q` cube coordinate. Calls {@link Hex#cartesianToCube} internally.
+             *
+             * @memberof Hex#
+             * @type {number}
+             */
+            get q() { return _cubeProp(this, &apos;q&apos;) },
+            /**
+             * Getter for `r` cube coordinate. Calls {@link Hex#cartesianToCube} internally.
+             *
+             * @memberof Hex#
+             * @type {number}
+             */
+            get r() { return _cubeProp(this, &apos;r&apos;) },
+            /**
+             * Getter for `s` cube coordinate. Calls {@link Hex#cartesianToCube} internally.
+             *
+             * @memberof Hex#
+             * @type {number}
+             */
+            get s() { return _cubeProp(this, &apos;s&apos;) },
+
+            // methods:
+            add: methods.addFactory({ Hex, Point }),
+            /**
+             * Alias for {@link Hex#coordinates}.
+             * @memberof Hex#
+             * @instance
+             */
+            cartesian: methods.coordinates,
+            cartesianToCube: methods.cartesianToCube,
+            center: methods.centerFactory({ Point }),
+            coordinates: methods.coordinates,
+            corners: methods.cornersFactory({ Point }),
+            cube: methods.cube,
+            cubeToCartesian: methods.cubeToCartesian,
+            distance: methods.distance,
+            equals: methods.equalsFactory({ Point }),
+            height: methods.height,
+            isFlat: methods.isFlat,
+            isPointy: methods.isPointy,
+            lerp: methods.lerpFactory({ Hex }),
+            nudge: methods.nudge,
+            oppositeCornerDistance: methods.oppositeCornerDistance,
+            oppositeSideDistance: methods.oppositeSideDistance,
+            round: methods.roundFactory({ Hex }),
+            set: methods.setFactory({ Hex }),
+            subtract: methods.subtractFactory({ Hex, Point }),
+            /**
+             * Alias for {@link Hex#cubeToCartesian}.
+             * @memberof Hex#
+             * @instance
+             */
+            toCartesian: methods.cubeToCartesian,
+            /**
+             * Alias for {@link Hex#cartesianToCube}.
+             * @memberof Hex#
+             * @instance
+             */
+            toCube: methods.cartesianToCube,
+            toPoint: methods.toPointFactory({ Point }),
+            toString: methods.toString,
+            width: methods.width
+        }
+        const finalPrototype = Object.assign(defaultPrototype, prototype)
+
+        // ensure origin is a point
+        finalPrototype.origin = Point(finalPrototype.origin)
+
+        Object.assign(Hex, staticMethods)
+
+        /**
+         * @function Hex
+         *
+         * @description
+         * Factory function to create hexes. Use {@link Honeycomb.extendHex} to create a Hex factory.
+         *
+         * @see {@link redblobgames.com|https://www.redblobgames.com/grids/hexagons/#coordinates}
+         *
+         * @param {(number|Object|number[])} [xOrProps=]    The x coordinate,
+         *                                                  **or** an object containing *any* of the cartesian (`x` and `y`) coordinates and optional custom properties,
+         *                                                  **or** an object containing *all* of the cube (`q`, `r`, and `s`) coordinates and optional custom properties,
+         *                                                  **or** an array containing *any* of the cartesian (x and y) coordinates.
+         * @param {number} [xOrProps.x=]                    The x coordinate.
+         * @param {number} [xOrProps.y=]                    The y coordinate.
+         * @param {number} [y=]                             The y coordinate.
+         * @param {object} [customProps={}]                 Any custom properties. The coordinates are merged into this object, ignoring any coordinates present in `customProps`.
+         *
+         * @returns {hex}                                   A hex. It *always* contains *only* the cartesian (x and y) coordinates and any custom properties.
+         *
+         * @example
+         * const Hex = Honeycomb.extendHex()
+         *
+         * // passing numbers:
+         * Hex()                        // { x: 0, y: 0 }
+         * Hex(1)                       // { x: 1, y: 1 }
+         * Hex(1, 2)                    // { x: 1, y: 2 }
+         *
+         * // passing an object with cartesian coordinates:
+         * Hex({})                      // { x: 0, y: 0 }
+         * Hex({ x: 1 })                // { x: 1, y: 1 }
+         * Hex({ y: 2 })                // { x: 2, y: 2 }
+         * Hex({ x: 1, y: 2 })          // { x: 1, y: 2 }
+         *
+         * // passing an object with cube coordinates:
+         * Hex({ q: 1, r: 2, s: -3 })   // { x: 2, y: 2 }
+         * Hex({ q: 1 })                // throws an error because of missing cube coordinates
+         *
+         * // passing an array:
+         * Hex([])                      // { x: 0, y: 0 }
+         * Hex([1])                     // { x: 1, y: 1 }
+         * Hex([1, 2])                  // { x: 1, y: 2 }
+         *
+         * // custom properties:
+         * Hex(1, 2, { a: 3 })          // { a: 3, x: 1, y: 2 }
+         * Hex({ x: 1, y: 2, a: 3 })    // { a: 3, x: 1, y: 2 }
+         *
+         * // cloning a hex:
+         * const someHex = Hex(4, -2)   // { x: 4, y: -2 }
+         * const clone = Hex(someHex)   // { x: 4, y: -2 }
+         * someHex === clone            // false
+         */
+        function Hex(xOrProps, y, customProps = {}) {
+            let x
+
+            if (isObject(xOrProps)) {
+                let { q, r, s, ...rest } = xOrProps
+
+                if (isNumber(q) || isNumber(r) || isNumber(s)) {
+                    if (q + r + s !== 0) {
+                        throw new Error(`Cube coordinates must have a sum of 0. q: ${q}, r: ${r}, s: ${s}, sum: ${q + r + s}.`)
+                    }
+
+                    ({ x, y } = finalPrototype.cubeToCartesian({ q, r, s }))
+                } else {
+                    ({ x, y } = xOrProps)
+                }
+
+                customProps = rest
+            } else if (isArray(xOrProps)) {
+                [x, y] = xOrProps
+                // ignore all arguments except xOrProps
+                customProps = {}
+            } else {
+                x = xOrProps
+            }
+
+            /**
+             * An object with x and y properties and several methods in its prototype chain, created by a {@link Hex} factory.
+             *
+             * @typedef {Object} hex
+             * @property {number} x Cartesian x coordinate.
+             * @property {number} y Cartesian y coordinate.
+             */
+            return Object.assign(
+                // the prototype has to be attached here, else Grid&apos;s shape methods break &#x1F641;
+                Object.create(finalPrototype),
+                // also merge any custom properties already present
+                this,
+                Object.assign(customProps, ensureXY(x, y))
+            )
+        }
+
+        return Hex
+    }
+}
+
+function _cubeProp(context, prop) {
+    return context.cartesianToCube({ x: context.x, y: context.y })[prop]
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

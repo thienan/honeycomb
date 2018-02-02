@@ -120,6 +120,9 @@ export function hexesBetween(firstHex, lastHex) {
     return hexes
 }
 
+/**
+ * @private
+ */
 export function neighborsOfFactory({ Grid, signedModulo, compassToNumberDirection }) {
     /**
      * @memberof Grid#

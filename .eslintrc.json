@@ -24,9 +24,6 @@
         "no-console": [
             "error",
             { "allow": [ "warn" ] }
-        ],
-        "valid-jsdoc": [
-            "warn"
         ]
     }
 }

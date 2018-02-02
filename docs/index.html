@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl">
+  <title data-ice="title">Home | honeycomb-grid</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Create hexagon grids easily. Written in javascript."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="honeycomb-grid"><meta property="twitter:description" content="Create hexagon grids easily. Written in javascript."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/flauwekeul/honeycomb"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-COMPASS_DIRECTION">COMPASS_DIRECTION</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#grid">grid</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get">get</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hexesBetween">hexesBetween</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setFactory">setFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-grid">grid</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#hex">hex</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-extendHexFactory">extendHexFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cartesianToCube">cartesianToCube</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-coordinates">coordinates</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cube">cube</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cubeToCartesian">cubeToCartesian</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-distance">distance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-equalsFactory">equalsFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-height">height</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isFlat">isFlat</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isPointy">isPointy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-nudge">nudge</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-oppositeCornerDistance">oppositeCornerDistance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-oppositeSideDistance">oppositeSideDistance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toString">toString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-width">width</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-thirdCoordinate">thirdCoordinate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DIAGONAL_DIRECTION_COORDINATES">DIAGONAL_DIRECTION_COORDINATES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DIRECTION_COORDINATES">DIRECTION_COORDINATES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EPSILON">EPSILON</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-OFFSET">OFFSET</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ORIENTATION">ORIENTATION</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-staticMethods">staticMethods</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-hex">hex</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#point">point</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-PointFactory">PointFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addFactory">addFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-divideFactory">divideFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-multiplyFactory">multiplyFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-subtractFactory">subtractFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-point">point</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="honeycomb">Honeycomb</h1><p><a href="https://gitter.im/honeycomb-grid"><img src="https://img.shields.io/gitter/room/flauwekeul/honeycomb.svg" alt="Gitter"></a>
+<a href="https://www.npmjs.com/package/honeycomb-grid"><img src="https://badge.fury.io/js/honeycomb-grid.svg" alt="NPM version"></a>
+<a href="https://david-dm.org/flauwekeul/honeycomb"><img src="https://david-dm.org/flauwekeul/honeycomb.svg" alt="dependencies"></a>
+<a href="https://david-dm.org/flauwekeul/honeycomb?type=dev"><img src="https://david-dm.org/flauwekeul/honeycomb/dev-status.svg" alt="devDependencies"></a>
+<a href="https://github.com/flauwekeul/honeycomb/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a></p>
+<p>Another hex grid library made in JavaScript, heavily inspired by <a href="http://www.redblobgames.com/grids/hexagons/">Red Blob Games&apos;</a> blog posts and code samples.</p>
+<p>All existing JS hex grid libraries I could find are coupled with some form of view. Most often a <code>&lt;canvas&gt;</code> element or the browser DOM. I want more separation of concerns...and a new hobby project to spend countless hours on.</p>
+<h3 id="features">Features</h3><ul>
+<li>&#x1F64C; Works in (modern) browsers and in Node.js.</li>
+<li>&#x1F4D0; Create hex grids in different shapes: &#x25AD; rectangles, &#x25B3; triangles, &#x2B21; hexagons and &#x25B1; parallelograms.</li>
+<li>&#x1F310; 2 coordinate systems: cartesian (<code>x</code> and <code>y</code>) and cube (<code>q</code>, <code>r</code> and <code>s</code>).</li>
+<li>&#x2728; Create your own hexes by extending the built-in Hex.</li>
+<li>&#x1F5FA; Convert points to hexes and vice versa.</li>
+<li>&#x2B22; Pointy and &#x2B23; flat hexes.</li>
+<li>&#x1F5A5; Lets you decide if and how hexes are rendered.</li>
+</ul>
+<h2 id="installation">Installation</h2><p>NPM:</p>
+<pre><code class="lang-bash"><code class="source-code prettyprint">npm i --save honeycomb-grid</code>
+</code></pre>
+<p>Yarn:</p>
+<pre><code class="lang-bash"><code class="source-code prettyprint">yarn add honeycomb-grid</code>
+</code></pre>
+<h2 id="getting-started">Getting started</h2><h3 id="browser">Browser</h3><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script src=&quot;honeycomb.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+    const Grid = Honeycomb.defineGrid()
+    Grid.rectangle({ width: 4, height: 4 })
+&lt;/script&gt;</code>
+</code></pre>
+<h3 id="node-js">Node.js</h3><pre><code class="lang-javascript"><code class="source-code prettyprint">const Honeycomb = require(&apos;honeycomb-grid&apos;)
+
+const Grid = Honeycomb.defineGrid()
+Grid.rectangle({ width: 4, height: 4 })</code>
+</code></pre>
+<h2 id="examples">Examples</h2><h3 id="basic-usage">Basic usage</h3><p>Create a hex grid in 3 steps:</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">// 1.  (optionally) create a Hex factory by extending the default:
+const Hex = Honeycomb.extendHex({
+    size: 30,           // default: 1
+    orientation: &apos;flat&apos; // default: &apos;pointy&apos;
+})
+
+// 2.  create a Grid factory that uses the Hex factory:
+const Grid = Honeycomb.defineGrid(Hex)
+
+// 3a. create a grid with a &quot;shape&quot; method:
+const grid1 = Grid.rectangle({ width: 4, height: 4 })
+// [
+//    { x: 0, y: 0 },
+//    { x: 0, y: 1 },
+//    { x: 0, y: 2 },
+//    &#x2026;
+// ]
+
+// 3b. or create a grid from individual hexes:
+const grid2 = Grid(Hex(1, 2), Hex(3, 4))
+// [
+//    { x: 1, y: 2 },
+//    { x: 3, y: 4 }
+// ]</code>
+</code></pre>
+<h3 id="rendering">Rendering</h3><p>Honeycomb comes without the ability to render hexes to screen. Fortunately, it isn&apos;t very hard. Especially if you use a dedicated rendering library.</p>
+<h4 id="with--a-href--http---www-pixijs-com---pixijs--a-">With <a href="http://www.pixijs.com/">PixiJS</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">const app = new PIXI.Application({ transparent: true })
+const graphics = new PIXI.Graphics()
+
+const Hex = Honeycomb.extendHex({ size: 5 })
+const Grid = Honeycomb.defineGrid(Hex)
+
+document.body.appendChild(app.view)
+// set a line style of 1px wide and color #999
+graphics.lineStyle(1, 0x999999)
+
+// render 10,000 hexes
+Grid.rectangle({ width: 100, height: 100 }).forEach(hex =&gt; {
+    const point = hex.toPoint()
+    // add the hex&apos;s position to each of its corner points
+    const corners = hex.corners().map(corner =&gt; corner.add(point))
+    // separate the first from the other corners
+    const [firstCorner, ...otherCorners] = corners
+
+    // move the &quot;pen&quot; to the first corner
+    graphics.moveTo(firstCorner.x, firstCorner.y)
+    // draw lines to the other corners
+    otherCorners.forEach(({ x, y }) =&gt; graphics.lineTo(x, y))
+    // finish at the first corner
+    graphics.lineTo(firstCorner.x, firstCorner.y)
+
+    app.stage.addChild(graphics)
+})</code>
+</code></pre>
+<p><a href="https://jsfiddle.net/Flauwekeul/qmfgey44/">Try it in JSFiddle</a>.</p>
+<h4 id="with--a-href--http---svgjs-com---svg-js--a-">With <a href="http://svgjs.com/">SVG.js</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">const draw = SVG(document.body)
+
+const Hex = Honeycomb.extendHex({ size: 5 })
+const Grid = Honeycomb.defineGrid(Hex)
+// get the corners of a hex (they&apos;re the same for all hexes created with the same Hex factory)
+const corners = Hex().corners()
+// an SVG symbol can be reused
+const hexSymbol = draw.symbol()
+    // map the corners&apos; positions to a string and create a polygon
+    .polygon(corners.map(({ x, y }) =&gt; `${x},${y}`))
+    .fill(&apos;none&apos;)
+    .stroke({ width: 1, color: &apos;#999&apos; })
+
+// render 10,000 hexes
+Grid.rectangle({ width: 100, height: 100 }).forEach(hex =&gt; {
+    const { x, y } = hex.toPoint()
+    // use hexSymbol and set its position for each hex
+    draw.use(hexSymbol).translate(x, y)
+})</code>
+</code></pre>
+<p><a href="https://jsfiddle.net/Flauwekeul/0vm2azj2/">Try it in JSFiddle</a>.</p>
+<h3 id="grids-extend--code-array-prototype--code-">Grids extend <code>Array.prototype</code></h3><p>Most properties/methods of grids are the same as their Array counterpart:</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">const grid = Grid.rectangle({ width: 4, height: 4 })
+
+grid.length // 16
+grid.pop()  // { x: 3, y: 3 }
+grid.length // 15
+grid[4]     // { x: 1, y: 0 }</code>
+</code></pre>
+<p>Some Grid methods are augmented. For example: <a href="https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Array/includes"><code>Array#includes</code></a> always returns <code>false</code> when passed an object literal because it uses <a href="https://developer.mozilla.org/nl/docs/Web/JavaScript/Equality_comparisons_and_sameness">strict equality</a> internally. <a href="#includes"><code>Grid#includes</code></a> <em>only</em> accepts object literals (in the form of <a href="#point-1">points</a>):</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">const array = [{ x: 1, y: 0 }]
+array.includes({ x: 1, y: 0 })  // false
+
+const grid = Grid(Hex(1, 0))
+grid.includes({ x: 1, y: 0 })   // true</code>
+</code></pre>
+<h4 id="grid-methods-that-mutate">Grid methods that mutate</h4><p>Methods that mutate the grid in-place (<a href="#push">Grid#push</a>, <a href="#splice">Grid#splice</a> and <a href="#unshift">Grid#unshift</a>) only accept valid hexes to prevent &quot;grid corruption&quot; &#x1F46E;&#x200D;.</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">const grid = Grid()             // []
+
+// this silently fails:
+grid.push(&apos;invalid hex&apos;)        // 0 &lt;- the grid&apos;s length, which remains 0
+grid.includes(&apos;invalid hex&apos;)    // false</code>
+</code></pre>
+<p>Keep in mind that methods that return a new grid (e.g. <a href="#map">Grid#map</a>) can create grids with invalid hexes:</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">const grid = Grid.rectangle({ width: 4, height: 4 })
+
+const newGrid = grid.map(hex =&gt; &apos;invalid hex&apos;)
+// [
+//    &apos;invalid hex&apos;,
+//    &apos;invalid hex&apos;,
+//    &apos;invalid hex&apos;,
+//    &#x2026;
+// ]</code>
+</code></pre>
+<h4 id="be-careful-with-bracket-notation">Be careful with bracket notation</h4><p>It&apos;s possible to add an invalid hex to a grid by using bracket notation:</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">const grid = Grid(Hex())
+
+grid[0]                     // { x: 0, y: 0 }
+grid[0] = &apos;invalid hex&apos;
+grid[0]                     // &apos;invalid hex&apos; &#x26A0;&#xFE0F;</code>
+</code></pre>
+<p>Use <a href="#get"><code>Grid#get</code></a> and <a href="#set"><code>Grid#set</code></a> instead:</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">const grid = Grid(Hex())
+
+grid.get(0)                 // { x: 0, y: 0 }
+grid.set(0, &apos;invalid hex&apos;)
+grid.get(0)                 // { x: 0, y: 0 } &lt;- invalid hex is ignored
+
+// Grid#set() also accepts a point:
+grid.set({ x: 0, y: 0 }, Hex(-1, 3))
+// &#x2026;as does Grid#get():
+grid.get([-1, 3])           // { x: -1, y: 3 }</code>
+</code></pre>
+<h3 id="point-&#x2192;-hex">Point &#x2192; Hex</h3><p>Translating a point (pixel) in the grid to the corresponding hex is possible with <a href="#pointtohex"><code>Grid.pointToHex()</code></a>.</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">const Hex = Honeycomb.extendHex({ size: 30 })
+const Grid = Honeycomb.defineGrid(Hex)
+const grid = Grid.rectangle({ width: 10, height: 10 })
+
+document.addEventListener(&apos;click&apos;, ({ offsetX, offsetY }) =&gt; {
+    // convert point to hex (coordinates)
+    const hexCoordinates = Grid.pointToHex([offsetX, offsetY])
+    // get the actual hex from the grid
+    console.log(grid.get(hexCoordinates))
+})</code>
+</code></pre>
+<p>See a more elaborate example in <a href="https://jsfiddle.net/Flauwekeul/3bd6sa9r/">JSFiddle</a>.</p>
+<h3 id="grid-shapes">Grid shapes</h3><p>Honeycomb offers 4 shape methods: <a href="#rectangle">rectangle</a>, <a href="#triangle">triangle</a>, <a href="#hexagon">hexagon</a> and <a href="#parallelogram">parallelogram</a>. <a href="https://jsfiddle.net/Flauwekeul/arxo1vqo/">Try them out in JSFiddle</a>.</p>
+<h3 id="coordinate-systems">Coordinate systems</h3><p>The standard coordinate system is a <a href="https://en.wikipedia.org/wiki/Cartesian_coordinate_system">cartesian</a> one. It&apos;s intuitive and easy to reason about. A lot of methods internally use a &quot;cube&quot; coordinate system. See <a href="https://www.redblobgames.com/grids/hexagons/#coordinates">this redblobgames.com blog post</a> for an explanation between the two (he calls the cartesian system &quot;offset coordinates&quot;).</p>
+<p>Hexes have getters for each of the cube coordinates <code>q</code>, <code>r</code> and <code>s</code>:</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">const Hex = Honeycomb.extendHex()
+const hex = Hex(3, 4)
+
+hex.q           // 1
+hex.r           // 4
+hex.s           // -5
+
+hex.cartesian() // { x: 3, y: 4 }
+hex.cube()      // { q: 1, r: 4, s: -5 }</code>
+</code></pre>
+<p>There are methods for converting between cartesian and cube:</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">const Hex = Honeycomb.extendHex()
+const hex = Hex()
+
+hex.toCube({ x: 3, y: 4 })      // { q: 1, r: 4, s: -5 }
+
+// Hex#toCartesian doesn&apos;t require the s coordinate:
+hex.toCartesian({ q: 1, r: 4 }) // { x: 3, y: 4 }</code>
+</code></pre>
+<blockquote>
+<p>These methods always require coordinates to be passed and don&apos;t work on a hex instance, even though they&apos;re instance methods. This will be fixed in a future release &#x1F643;</p>
+</blockquote>
+<p>Hexes can also be created from cube coordinates:</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">const Hex = Honeycomb.extendHex()
+Hex({ q: 1, r: 4, s: -5 })  // { x: 3, y: 4 }</code>
+</code></pre>
+<h2 id="backlog">Backlog</h2><h3 id="&#x1F41B;-bugs">&#x1F41B; Bugs</h3><h3 id="&#x1F680;-features">&#x1F680; Features</h3><ol>
+<li>Hex methods that do nothing with a hex&apos;s coordinates should be static (e.g. <code>cubeToCartesian</code>, <code>isPointy</code>, <code>width</code>)?</li>
+<li>Make some Grid instance methods also Grid static methods and vice versa?</li>
+<li>Make more methods accept points (instead of hexes). Also: instead of filtering invalid hexes, attempt to convert values to hexes (by passing them to <code>Hex()</code>)?</li>
+<li>Make some methods getters (e.g. <code>Hex#width</code>)?</li>
+<li>Make methods that accept points, also accept <code>x</code> and <code>y</code> as separate parameters?</li>
+<li>Maybe make entities immutable?</li>
+<li>Add possibility to <a href="http://www.redblobgames.com/grids/hexagons/implementation.html#layout-test-size-tall">stretch hexes</a>; they needn&apos;t be regularly shaped. This is an <a href="https://github.com/flauwekeul/honeycomb/issues/1">actual request</a> as well. Maybe this should be solved during rendering (and not in Honeycomb at all)?</li>
+<li>Add logger that &quot;renders&quot; a grid using <code>console.log</code>.</li>
+<li>Overwrite <code>Grid#sort</code> so it can sort by 1 or more dimensions, ascending/descending (and also accepts a custom comparator)?</li>
+<li>Add <code>Grid.union</code>, <code>Grid.subtract</code>, <code>Grid.intersect</code> and <code>Grid.difference</code> (or maybe as prototype methods?). <a href="https://www.sketchapp.com/docs/shapes/boolean-operations/">More info</a>.</li>
+<li>Shiny github.io pages &#x1F60E;</li>
+<li>Maybe <code>Honeycomb.defineGrid</code> should accept a prototype too (as a second parameter).</li>
+<li>Maybe <code>Honeycomb</code> should (also) be a function that accepts a hex prototype and returns a Grid factory?</li>
+<li>Investigate how instance properties are set vs prototype properties. When creating a custom hex it should be possible to set properties that are copied when creating new hexes and properties that only exist in the prototype. Similar to how <a href="https://github.com/stampit-org/stampit">stampit</a> solves this.</li>
+<li>Add type definition files? Potential tools: <a href="https://github.com/Microsoft/dts-gen">dts-gen</a>, <a href="https://github.com/ConquestArrow/dtsmake">dtsmake</a>.</li>
+</ol>
+<h3 id="&#x1F6E0;-refactorings">&#x1F6E0; Refactorings</h3><ol>
+<li>Only inject what&apos;s needed, instead of whole factories (see <code>Grid.rectangle()</code> for example).</li>
+<li>Don&apos;t use <code>this</code> at all and just inject a context. Functional programming yo &#x1F913;.</li>
+</ol>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

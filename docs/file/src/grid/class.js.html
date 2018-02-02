@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/grid/class.js | honeycomb-grid</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Create hexagon grids easily. Written in javascript."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="honeycomb-grid"><meta property="twitter:description" content="Create hexagon grids easily. Written in javascript."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/flauwekeul/honeycomb"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-COMPASS_DIRECTION">COMPASS_DIRECTION</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#grid">grid</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get">get</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hexesBetween">hexesBetween</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setFactory">setFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-grid">grid</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#hex">hex</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-extendHexFactory">extendHexFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cartesianToCube">cartesianToCube</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-coordinates">coordinates</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cube">cube</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cubeToCartesian">cubeToCartesian</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-distance">distance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-equalsFactory">equalsFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-height">height</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isFlat">isFlat</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isPointy">isPointy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-nudge">nudge</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-oppositeCornerDistance">oppositeCornerDistance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-oppositeSideDistance">oppositeSideDistance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toString">toString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-width">width</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-thirdCoordinate">thirdCoordinate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DIAGONAL_DIRECTION_COORDINATES">DIAGONAL_DIRECTION_COORDINATES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DIRECTION_COORDINATES">DIRECTION_COORDINATES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EPSILON">EPSILON</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-OFFSET">OFFSET</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ORIENTATION">ORIENTATION</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-staticMethods">staticMethods</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-hex">hex</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#point">point</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-PointFactory">PointFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addFactory">addFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-divideFactory">divideFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-multiplyFactory">multiplyFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-subtractFactory">subtractFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-point">point</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/grid/class.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { ensureXY } from &apos;../utils&apos;
+import PointFactory from &apos;../point&apos;
+
+const Point = PointFactory({ ensureXY })
+
+/**
+ * @private
+ *
+ * The only way to prevent setting invalid items in a grid (`grid[0] = &apos;not a hex&apos;`) is by using proxies.
+ * A proxy can have a `set` trap that can prevent the setting of invalid hexes.
+ *
+ * Some approaches include:
+ * 1. Wrapping the grid instance returned from GridFactory in a proxy.
+ * 2. Putting a proxy in the prototype chain of Grid (this &quot;shields&quot; the Array prototype methods).
+ * 3. Using a proxy to forward certain calls to the Array prototype (and not extending Array at all).
+ */
+
+export default class Grid extends Array {
+    /**
+     * @private
+     * @param {*} value     Any value.
+     * @returns {boolean}   Whether the passed value is a valid hex.
+     */
+    static isValidHex(value) {
+        return (value || {}).__isHoneycombHex === true
+    }
+
+    /**
+     * @memberof Grid#
+     * @override
+     * @throws {TypeError}  It makes no sense for a grid to fill it with arbitrary values, because it should only contain valid hexes.
+     *
+     * @returns {TypeError} An error.
+     */
+    fill() {
+        throw new TypeError(&apos;Grid.prototype.fill is not implemented&apos;)
+    }
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes|Array#includes},
+     * but searches the passed hex (which can also be a {@link point}.
+     *
+     * @memberof Grid#
+     * @override
+     *
+     * @param {point} point             The coordinates to search for.
+     * @param {number} [fromIndex=0]    Optional index to start searching.
+     *
+     * @returns {boolean}               Whether the hex is included in the grid.
+     *
+     * @example
+     * const Grid = Honeycomb.defineGrid()
+     * const Hex = Grid.Hex
+     * const grid = Grid(Hex(0))    // [ { x: 0, y: 0 } ]
+     *
+     * grid.includes(Hex(0))        // true
+     * grid.includes([0, 0])        // true
+     * grid.includes(Hex(0), 1)     // false
+     * grid.includes(Hex(5, 7))     // false
+     */
+    includes(point, fromIndex = 0) {
+        return !!(this.indexOf(point, fromIndex) + 1)
+    }
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf|Array#indexOf},
+     * but accepts a {@link point} and internally uses {@link Hex#equals} as a comparator.
+     *
+     * @memberof Grid#
+     * @override
+     *
+     * @param {point} point             The coordinates to search for.
+     * @param {number} [fromIndex=0]    Optional index to start searching.
+     *                                  If negative, it is taken as the offset from the end of the grid.
+     *
+     * @returns {number}                The index of the found hex (first from the left) or -1 if the hex wasn&apos;t found.
+     *
+     * @example
+     * const Grid = Honeycomb.defineGrid()
+     * const Hex = Grid.Hex
+     * const grid = Grid(Hex(0), Hex(1), Hex(0))
+     * // [
+     * //    { x: 0, y: 0 },
+     * //    { x: 1, y: 1 },
+     * //    { x: 0, y: 0 }
+     * // ]
+     *
+     * grid.indexOf(Hex(0))     // 0
+     * grid.indexOf([0, 0])     // 0
+     * grid.indexOf(Hex(0), 1)  // 2
+     * grid.indexOf(Hex(5, 7))  // -1
+     */
+    indexOf(point, fromIndex = 0) {
+        const { length } = this
+        let i = Number(fromIndex)
+
+        point = Point(point)
+        i = Math.max(i &gt;= 0 ? i : length + i, 0)
+
+        for (i; i &lt; length; i++) {
+            if (this[i].equals(point)) {
+                return i
+            }
+        }
+
+        return -1
+    }
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf|Array#lastIndexOf},
+     * but accepts a {@link point} and internally uses {@link Hex#equals} as a comparator.
+     *
+     * Because all hexes will have different coordinates in most grids, this method behaves the same as {@link Grid#indexOf}.
+     * This method might have a slightly better performance if you know the search hex is at the end of the grid.
+     *
+     * @memberof Grid#
+     * @override
+     *
+     * @param {point} point                 The coordinates to search for.
+     * @param {number} [fromIndex=length-1] Optional index to start searching back from.
+     *                                      If negative, it is taken as the offset from the end of the grid.
+     *
+     * @returns {number}                    The last index of the found hex or -1 if the hex wasn&apos;t found.
+     *
+     * @example
+     * const Grid = Honeycomb.defineGrid()
+     * const Hex = Grid.Hex
+     * const grid = Grid(Hex(0), Hex(1), Hex(0))
+     * // [
+     * //    { x: 0, y: 0 },
+     * //    { x: 1, y: 1 },
+     * //    { x: 0, y: 0 }
+     * // ]
+     *
+     * grid.lastIndexOf(Hex(0))     // 2
+     * grid.lastIndexOf([0, 0])     // 2
+     * grid.lastIndexOf(Hex(0), 1)  // 0
+     * grid.lastIndexOf(Hex(5, 7))  // -1
+     */
+    lastIndexOf(point, fromIndex = this.length - 1) {
+        const { length } = this
+        let i = Number(fromIndex)
+
+        point = Point(point)
+        i = i &gt;= 0 ? Math.min(i, length - 1) : length + i
+
+        for (i; i &gt;= 0; i--) {
+            if (this[i].equals(point)) {
+                return i
+            }
+        }
+
+        return -1
+    }
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push|Array#push},
+     * but filters out any passed invalid hexes.
+     *
+     * @memberof Grid#
+     * @override
+     *
+     * @param {...hex} [hexes]  Hexes to add to the end of the grid. Invalid hexes are ignored.
+     *
+     * @returns {number}        The new length of the grid.
+     *
+     * @example
+     * const Grid = Honeycomb.defineGrid()
+     * const Hex = Grid.Hex
+     *
+     * const grid = Grid(Hex(0))    // [{ x: 0, y: 0 }]
+     * grid.push(Hex(1))            // 2
+     * grid                         // [{ x: 0, y: 0 }, { x: 1, y: 1 }]
+     *
+     * grid.push(&apos;invalid&apos;)         // 2
+     * grid                         // [{ x: 0, y: 0 }, { x: 1, y: 1 }]
+     */
+    push(...hexes) {
+        return super.push(...hexes.filter(Grid.isValidHex))
+    }
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice|Array#splice},
+     * but filters out any passed invalid hexes.
+     *
+     * @memberof Grid#
+     * @override
+     *
+     * @param {number} start                        Index at which to start changing the grid.
+     * @param {number} [deleteCount=length-start]   Amount of hexes to delete.
+     * @param {...hex} [hexes=[]]                   The hexes to add to the grid, beginning at the `start`.
+     *
+     * @returns {hex[]}                             A grid with the deleted hexes (if any).
+     *
+     * @example
+     * const Grid = Honeycomb.defineGrid()
+     * const Hex = Grid.Hex
+     * const grid = Grid.rectangle({ width: 2, height: 1 })
+     * // [
+     * //    { x: 0, y: 0 },
+     * //    { x: 1, y: 0 },
+     * //    { x: 0, y: 1 },
+     * //    { x: 1, y: 1 }
+     * // ]
+     *
+     * grid.splice(2)               // [{ x: 0, y: 1 }, { x: 1, y: 1 }] &lt;- deleted hexes
+     * grid                         // [{ x: 0, y: 0 }, { x: 1, y: 0 }] &lt;- leftover hexes
+     *
+     * grid.splice(2, 1)            // [{ x: 0, y: 1 }]
+     * grid                         // [{ x: 0, y: 0 }, { x: 1, y: 0 }, { x: 1, y: 1 }]
+     *
+     * grid.splice(2, 1, Hex(2))    // [{ x: 0, y: 1 }]
+     * grid
+     * // [
+     * //    { x: 0, y: 0 },
+     * //    { x: 1, y: 0 },
+     * //    { x: 2, y: 2 },
+     * //    { x: 1, y: 1 }
+     * // ]
+     */
+    splice(start, deleteCount, ...hexes) {
+        // when deleteCount is undefined/null, it&apos;s casted to 0, deleting 0 hexes
+        // this is not according to spec: it should delete all hexes (starting from `start`)
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+        if (deleteCount == null) {
+            return super.splice(start)
+        }
+
+        return super.splice(start, deleteCount, ...hexes.filter(Grid.isValidHex))
+    }
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift|Array#unshift},
+     * but filters out any passed invalid hexes.
+     *
+     * @memberof Grid#
+     * @override
+     *
+     * @param {...hex} [hexes]  Hexes to add to the start of the grid. Invalid hexes are ignored.
+     *
+     * @returns {number}        The new length of the grid.
+     *
+     * @example
+     * const Grid = Honeycomb.defineGrid()
+     * const Hex = Grid.Hex
+     *
+     * const grid = Grid(Hex(0))    // [{ x: 0, y: 0 }]
+     * grid.unshift(Hex(1))         // 2
+     * grid                         // [{ x: 1, y: 1 }, { x: 0, y: 0 }]
+     *
+     * grid.unshift(&apos;invalid&apos;)      // 2
+     * grid                         // [{ x: 1, y: 1 }, { x: 0, y: 0 }]
+     */
+    unshift(...hexes) {
+        return super.unshift(...hexes.filter(Grid.isValidHex))
+    }
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat|Array#concat}.
+     * @memberof Grid#
+     * @method concat
+     * @instance
+     */
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin|Array#copyWithin}.
+     * @memberof Grid#
+     * @method copyWithin
+     * @instance
+     */
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries|Array#entries}.
+     * @memberof Grid#
+     * @method entries
+     * @instance
+     */
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every|Array#every}.
+     * @memberof Grid#
+     * @method every
+     * @instance
+     */
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter|Array#filter}.
+     * @memberof Grid#
+     * @method filter
+     * @instance
+     */
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find|Array#find}.
+     * @memberof Grid#
+     * @method find
+     * @instance
+     */
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex|Array#findIndex}.
+     * @memberof Grid#
+     * @method findIndex
+     * @instance
+     */
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach|Array#forEach}.
+     * @memberof Grid#
+     * @method forEach
+     * @instance
+     */
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join|Array#join}.
+     * @memberof Grid#
+     * @method join
+     * @instance
+     */
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/keys|Array#keys}.
+     * @memberof Grid#
+     * @method keys
+     * @instance
+     */
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map|Array#map}.
+     * @memberof Grid#
+     * @method map
+     * @instance
+     */
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop|Array#pop}.
+     * @memberof Grid#
+     * @method pop
+     * @instance
+     */
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce|Array#reduce}.
+     * @memberof Grid#
+     * @method reduce
+     * @instance
+     */
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight|Array#reduceRight}.
+     * @memberof Grid#
+     * @method reduceRight
+     * @instance
+     */
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse|Array#reverse}.
+     * @memberof Grid#
+     * @method reverse
+     * @instance
+     */
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift|Array#shift}.
+     * @memberof Grid#
+     * @method shift
+     * @instance
+     */
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some|Array#some}.
+     * @memberof Grid#
+     * @method some
+     * @instance
+     */
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort|Array#sort}.
+     * @memberof Grid#
+     * @method sort
+     * @instance
+     */
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toLocaleString|Array#toLocaleString}.
+     * @memberof Grid#
+     * @method toLocaleString
+     * @instance
+     */
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString|Array#toString}.
+     * @memberof Grid#
+     * @method toString
+     * @instance
+     */
+
+    /**
+     * Identical to {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values|Array#values}.
+     * @memberof Grid#
+     * @method values
+     * @instance
+     */
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

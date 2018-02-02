@@ -1,6 +1,9 @@
 import { isString } from 'axis.js'
 import { offsetFromZero } from '../utils'
 
+/**
+ * @private
+ */
 export function isValidHexFactory({ Grid }) {
     /**
      * @memberof Grid
@@ -15,6 +18,9 @@ export function isValidHexFactory({ Grid }) {
     }
 }
 
+/**
+ * @private
+ */
 export function pointToHexFactory({ Point, Hex }) {
     /**
      * Converts the passed {@link point} to a hex.
@@ -55,6 +61,9 @@ export function pointToHexFactory({ Point, Hex }) {
     }
 }
 
+/**
+ * @private
+ */
 export function parallelogramFactory({ Grid, Hex }) {
     /**
      * Creates a grid in the shape of a [parallelogram](https://en.wikipedia.org/wiki/Parallelogram) ▱.
@@ -119,6 +128,9 @@ export function parallelogramFactory({ Grid, Hex }) {
     }
 }
 
+/**
+ * @private
+ */
 export function triangleFactory({ Grid, Hex }) {
     /**
      * Creates a grid in the shape of a [(equilateral) triangle](https://en.wikipedia.org/wiki/Equilateral_triangle) △.
@@ -177,6 +189,9 @@ export function triangleFactory({ Grid, Hex }) {
     }
 }
 
+/**
+ * @private
+ */
 export function hexagonFactory({ Grid, Hex }) {
     /**
      * Creates a grid in the shape of a [hexagon](https://en.wikipedia.org/wiki/Hexagon) ⬡.
@@ -225,6 +240,9 @@ export function hexagonFactory({ Grid, Hex }) {
     }
 }
 
+/**
+ * @private
+ */
 export function rectangleFactory({ Grid, Hex, compassToNumberDirection, signedModulo }) {
     /**
      * Creates a grid in the shape of a [rectangle](https://en.wikipedia.org/wiki/Rectangle) ▭.

@@ -3,6 +3,9 @@ import { offsetFromZero } from '../utils'
 
 const sqrt3 = Math.sqrt(3)
 
+/**
+ * @private
+ */
 export function setFactory({ Hex }) {
     /**
      * @memberof Hex#
@@ -165,6 +168,9 @@ export function height() {
         this.oppositeSideDistance()
 }
 
+/**
+ * @private
+ */
 export function cornersFactory({ Point }) {
     /**
      * @memberof Hex#
@@ -223,6 +229,9 @@ export function cornersFactory({ Point }) {
     }
 }
 
+/**
+ * @private
+ */
 export function centerFactory({ Point }) {
     /**
      * @memberof Hex#
@@ -244,6 +253,9 @@ export function centerFactory({ Point }) {
     }
 }
 
+/**
+ * @private
+ */
 export function toPointFactory({ Point }) {
     /**
      * @memberof Hex#
@@ -271,6 +283,9 @@ export function toPointFactory({ Point }) {
     }
 }
 
+/**
+ * @private
+ */
 export function addFactory({ Hex, Point }) {
     /**
      * @memberof Hex#
@@ -293,6 +308,9 @@ export function addFactory({ Hex, Point }) {
     }
 }
 
+/**
+ * @private
+ */
 export function subtractFactory({ Hex, Point }) {
     /**
      * @memberof Hex#
@@ -351,6 +369,9 @@ export function distance(hex) {
     )
 }
 
+/**
+ * @private
+ */
 export function roundFactory({ Hex }) {
     /**
      * Rounds the current floating point hex coordinates to their nearest integer hex coordinates.
@@ -387,6 +408,9 @@ export function roundFactory({ Hex }) {
     }
 }
 
+/**
+ * @private
+ */
 export function lerpFactory({ Hex }) {
     /**
      * Returns an interpolation between the current hex and the passed hex for a `t` between 0 and 1.

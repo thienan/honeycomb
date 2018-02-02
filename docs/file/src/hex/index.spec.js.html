@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/hex/index.spec.js | honeycomb-grid</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Create hexagon grids easily. Written in javascript."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="honeycomb-grid"><meta property="twitter:description" content="Create hexagon grids easily. Written in javascript."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/flauwekeul/honeycomb"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-COMPASS_DIRECTION">COMPASS_DIRECTION</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#grid">grid</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get">get</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hexesBetween">hexesBetween</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setFactory">setFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-grid">grid</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#hex">hex</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-extendHexFactory">extendHexFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cartesianToCube">cartesianToCube</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-coordinates">coordinates</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cube">cube</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cubeToCartesian">cubeToCartesian</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-distance">distance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-equalsFactory">equalsFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-height">height</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isFlat">isFlat</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isPointy">isPointy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-nudge">nudge</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-oppositeCornerDistance">oppositeCornerDistance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-oppositeSideDistance">oppositeSideDistance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toString">toString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-width">width</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-thirdCoordinate">thirdCoordinate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DIAGONAL_DIRECTION_COORDINATES">DIAGONAL_DIRECTION_COORDINATES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DIRECTION_COORDINATES">DIRECTION_COORDINATES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EPSILON">EPSILON</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-OFFSET">OFFSET</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ORIENTATION">ORIENTATION</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-staticMethods">staticMethods</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-hex">hex</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#point">point</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-PointFactory">PointFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addFactory">addFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-divideFactory">divideFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-multiplyFactory">multiplyFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-subtractFactory">subtractFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-point">point</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/hex/index.spec.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/* eslint-env mocha */
+
+import { expect } from &apos;chai&apos;
+import sinon from &apos;sinon&apos;
+
+import { ensureXY } from &apos;../utils&apos;
+import extendHexFactory, { staticMethods } from &apos;../../src/hex&apos;
+import { ORIENTATION, OFFSET } from &apos;./constants&apos;
+
+const ensureXYSpy = sinon.spy(ensureXY)
+const extendHex = extendHexFactory({ ensureXY: ensureXYSpy })
+
+describe(&apos;extendHex&apos;, function() {
+    let Hex
+
+    beforeEach(() =&gt; {
+        Hex = extendHex()
+    })
+
+    it(&apos;returns a function&apos;, function() {
+        expect(Hex).to.be.a(&apos;function&apos;)
+    })
+
+    it(&apos;returns a function that has the Hex static methods&apos;, function() {
+        expect(Object.entries(Hex)).to.eql(Object.entries(staticMethods))
+    })
+
+    it(&apos;returns a function with the default prototype&apos;, function() {
+        const prototype = Object.getPrototypeOf(Hex())
+        const prototypeProps = Object.keys(prototype)
+
+        expect(prototypeProps).to.eql([
+            &apos;__isHoneycombHex&apos;,
+
+            &apos;orientation&apos;,
+            &apos;origin&apos;,
+            &apos;size&apos;,
+            &apos;offset&apos;,
+            &apos;q&apos;,
+            &apos;r&apos;,
+            &apos;s&apos;,
+
+            &apos;add&apos;,
+            &apos;cartesian&apos;,
+            &apos;cartesianToCube&apos;,
+            &apos;center&apos;,
+            &apos;coordinates&apos;,
+            &apos;corners&apos;,
+            &apos;cube&apos;,
+            &apos;cubeToCartesian&apos;,
+            &apos;distance&apos;,
+            &apos;equals&apos;,
+            &apos;height&apos;,
+            &apos;isFlat&apos;,
+            &apos;isPointy&apos;,
+            &apos;lerp&apos;,
+            &apos;nudge&apos;,
+            &apos;oppositeCornerDistance&apos;,
+            &apos;oppositeSideDistance&apos;,
+            &apos;round&apos;,
+            &apos;set&apos;,
+            &apos;subtract&apos;,
+            &apos;toCartesian&apos;,
+            &apos;toCube&apos;,
+            &apos;toPoint&apos;,
+            &apos;toString&apos;,
+            &apos;width&apos;
+        ])
+        expect(prototype).to.have.property(&apos;__isHoneycombHex&apos;, true)
+        expect(prototype).to.have.property(&apos;orientation&apos;, ORIENTATION.pointy)
+        expect(prototype).to.have.property(&apos;origin&apos;).that.contains({ x: 0, y: 0 })
+        expect(prototype).to.have.property(&apos;size&apos;, 1)
+        expect(prototype).to.have.property(&apos;offset&apos;, OFFSET.odd)
+    })
+
+    it(&apos;has getters for the q, r and s cube coordinates&apos;, () =&gt; {
+        const cartesianToCube = sinon.stub().returns({ q: &apos;q&apos;, r: &apos;r&apos;, s: &apos;s&apos; })
+        const hex = extendHex({ cartesianToCube })()
+
+        expect(hex.q).to.equal(&apos;q&apos;)
+        expect(hex.r).to.equal(&apos;r&apos;)
+        expect(hex.s).to.equal(&apos;s&apos;)
+        expect(() =&gt; hex.q = 1).to.throw
+        expect(() =&gt; hex.r = 1).to.throw
+        expect(() =&gt; hex.s = 1).to.throw
+    })
+
+    describe(&apos;when passed an object&apos;, function() {
+        it(`returns a Hex factory with the object&apos;s properties merged into the default prototype`, function() {
+            const prototype = {
+                size: 100,
+                custom: &apos;property&apos;
+            }
+            const Hex = extendHex(prototype)
+            const finalPrototype = Object.getPrototypeOf(Hex())
+
+            expect(finalPrototype).to.have.own.property(&apos;size&apos;, 100)
+            expect(finalPrototype).to.have.own.property(&apos;custom&apos;)
+        })
+
+        it(`creates a different Hex factory each time it&apos;s called`, function() {
+            const Hex1 = extendHex({ size: 10 })
+            const Hex2 = extendHex({ size: 20 })
+
+            expect(Hex1().size).not.to.equal(Hex2().size)
+        })
+    })
+})
+
+describe(&apos;Hex creation&apos;, function() {
+    let Hex
+
+    before(function() {
+        Hex = extendHex()
+    })
+
+    it(&apos;calls ensureXY&apos;, () =&gt; {
+        Hex(1, 2)
+        expect(ensureXYSpy).to.have.been.calledWith(1, 2)
+    })
+
+    describe(&apos;with 2 numbers&apos;, function() {
+        it(&apos;sets them as x and y coordinates&apos;, function() {
+            expect(Hex(3, -5)).to.contain({ x: 3, y: -5 })
+        })
+    })
+
+    describe(&apos;with 1 number&apos;, function() {
+        it(&apos;sets the missing coordinate to the same value as the passed coordinate&apos;, function() {
+            expect(Hex(3, null)).to.contain({ x: 3, y: 3 })
+            expect(Hex(null, 2)).to.contain({ x: 2, y: 2 })
+        })
+    })
+
+    describe(&apos;with a 3rd argument that is an object&apos;, function() {
+        it(&apos;merges the object in the hex&apos;, function() {
+            expect(Hex(3, 2, { custom: &apos;property&apos; })).to.contain({ x: 3, y: 2, custom: &apos;property&apos; })
+        })
+
+        it(&apos;ignores any coordinates in the object&apos;, function() {
+            expect(Hex(3, 2, { x: 0, y: 0 })).to.contain({ x: 3, y: 2 })
+        })
+    })
+
+    describe(&apos;with an object containing x and y properties&apos;, function() {
+        it(&apos;sets the coordinates&apos;, function() {
+            expect(Hex({ x: 3, y: 2 })).to.contain({ x: 3, y: 2 })
+        })
+    })
+
+    describe(&apos;with an object containing either an x or y coordinate&apos;, function() {
+        it(&apos;sets the missing coordinate to the same value as the passed coordinate&apos;, function() {
+            expect(Hex({ x: 3 })).to.contain({ x: 3, y: 3 })
+            expect(Hex({ y: 2 })).to.contain({ x: 2, y: 2 })
+        })
+    })
+
+    describe(&apos;with an object containing all cube coordinates (q, r and s)&apos;, () =&gt; {
+        it(&apos;converts them to rectangular (x and y) coordinates&apos;, () =&gt; {
+            const cubeToCartesian = sinon.stub().returns({ x: 4, y: 5 })
+            const Hex = extendHex({ cubeToCartesian })
+            const result = Hex({ q: 1, r: 2, s: -3 })
+
+            expect(cubeToCartesian).to.have.been.calledWith({ q: 1, r: 2, s: -3 })
+            expect(result).to.contain({ x: 4, y: 5 })
+        })
+    })
+
+    describe(`with an object containing all cube coordinates (q, r and s) that don&apos;t sum to 0`, () =&gt; {
+        it(&apos;throws an error&apos;, () =&gt; {
+            expect(() =&gt; Hex({ q: 1, r: 2, s: 3 })).to.throw(
+                `Cube coordinates must have a sum of 0. q: 1, r: 2, s: 3, sum: 6.`
+            )
+        })
+    })
+
+    describe(&apos;with an object containing some cube coordinates (q, r and s)&apos;, () =&gt; {
+        it(&apos;throws an error&apos;, () =&gt; {
+            expect(() =&gt; Hex({ q: 1 })).to.throw(
+                `Cube coordinates must have a sum of 0. q: 1, r: undefined, s: undefined, sum: NaN.`
+            )
+        })
+    })
+
+    describe(&apos;with an object containing no coordinates&apos;, function() {
+        it(&apos;sets both coordinates to 0&apos;, function() {
+            expect(Hex({})).to.contain({ x: 0, y: 0 })
+        })
+    })
+
+    describe(&apos;with an object containing custom properties&apos;, function() {
+        it(&apos;sets the custom properties&apos;, function() {
+            expect(Hex({ custom: &apos;property&apos; })).to.contain({ custom: &apos;property&apos; })
+        })
+    })
+
+    describe(&apos;with an object and more arguments&apos;, function() {
+        it(&apos;ignores all but the object&apos;, function() {
+            const result = Hex({ x: 1, y: -3, custom: &apos;a&apos; }, 8, { x: 0, y: 0, custom: &apos;b&apos; })
+            expect(result).to.contain({ x: 1, y: -3, custom: &apos;a&apos; })
+            expect(result).not.to.contain({ custom: &apos;b&apos; })
+        })
+    })
+
+    describe(&apos;without parameters&apos;, function() {
+        it(&apos;sets both coordinates to 0&apos;, function() {
+            expect(Hex()).to.contain({ x: 0, y: 0 })
+        })
+    })
+
+    describe(&apos;with an array containing 2 numbers&apos;, function() {
+        it(&apos;sets them as x and y coordinates&apos;, function() {
+            expect(Hex([3, 0])).to.contain({ x: 3, y: 0 })
+        })
+    })
+
+    describe(&apos;with an array containing 1 number&apos;, function() {
+        it(&apos;sets the missing coordinate to the same value as the passed coordinate&apos;, function() {
+            expect(Hex([3])).to.contain({ x: 3, y: 3 })
+            expect(Hex([null, 2])).to.contain({ x: 2, y: 2 })
+        })
+    })
+
+    describe(&apos;with an array containing more than 2 numbers&apos;, function() {
+        it(&apos;ignores all but the first 2 array elements&apos;, function() {
+            const result = Hex([3, 2, { custom: &apos;a&apos;, x: 0 }, 8])
+            expect(result).to.contain({ x: 3, y: 2 })
+            expect(result).not.to.contain({ custom: &apos;a&apos; })
+        })
+    })
+
+    describe(&apos;with an empty array&apos;, function() {
+        it(&apos;sets both coordinates to 0&apos;, function() {
+            expect(Hex([])).to.contain({ x: 0, y: 0 })
+        })
+    })
+
+    describe(&apos;with an array and more arguments&apos;, function() {
+        it(&apos;ignores all but the array&apos;, function() {
+            const result = Hex([1, -3], 8, { x: 0, y: 0, custom: &apos;a&apos; })
+            expect(result).to.contain({ x: 1, y: -3 })
+            expect(result).not.to.contain({ custom: &apos;a&apos; })
+        })
+    })
+
+    describe(&apos;with a falsy value&apos;, function() {
+        it(&apos;sets both coordinates to 0&apos;, function() {
+            const bothZeroCoordinates = { x: 0, y: 0 }
+            expect(Hex(undefined)).to.contain(bothZeroCoordinates)
+            expect(Hex(null)).to.contain(bothZeroCoordinates)
+            expect(Hex(&apos;&apos;)).to.contain(bothZeroCoordinates)
+            expect(Hex(false)).to.contain(bothZeroCoordinates)
+        })
+    })
+
+    describe(&apos;with a hex&apos;, function() {
+        it(&apos;clones the hex&apos;, function() {
+            const someHex = Hex()
+            const clonedHex = Hex(someHex)
+            expect(clonedHex).not.to.equal(someHex)
+        })
+    })
+})
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

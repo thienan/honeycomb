@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/grid/index.spec.js | honeycomb-grid</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Create hexagon grids easily. Written in javascript."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="honeycomb-grid"><meta property="twitter:description" content="Create hexagon grids easily. Written in javascript."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/flauwekeul/honeycomb"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-COMPASS_DIRECTION">COMPASS_DIRECTION</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#grid">grid</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get">get</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hexesBetween">hexesBetween</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setFactory">setFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-grid">grid</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#hex">hex</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-extendHexFactory">extendHexFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cartesianToCube">cartesianToCube</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-coordinates">coordinates</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cube">cube</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cubeToCartesian">cubeToCartesian</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-distance">distance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-equalsFactory">equalsFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-height">height</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isFlat">isFlat</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isPointy">isPointy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-nudge">nudge</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-oppositeCornerDistance">oppositeCornerDistance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-oppositeSideDistance">oppositeSideDistance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toString">toString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-width">width</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-thirdCoordinate">thirdCoordinate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DIAGONAL_DIRECTION_COORDINATES">DIAGONAL_DIRECTION_COORDINATES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DIRECTION_COORDINATES">DIRECTION_COORDINATES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EPSILON">EPSILON</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-OFFSET">OFFSET</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ORIENTATION">ORIENTATION</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-staticMethods">staticMethods</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-hex">hex</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#point">point</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-PointFactory">PointFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addFactory">addFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-divideFactory">divideFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-multiplyFactory">multiplyFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-subtractFactory">subtractFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-point">point</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/grid/index.spec.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/* eslint-env mocha */
+
+import { expect } from &apos;chai&apos;
+import sinon from &apos;sinon&apos;
+
+import { ensureXY } from &apos;../utils&apos;
+import defineGridFactory from &apos;./&apos;
+import Grid from &apos;./class&apos;
+import extendHexFactory from &apos;../hex&apos;
+
+const extendHex = extendHexFactory({ ensureXY })
+const defineGrid = defineGridFactory({ extendHex })
+const Hex = extendHex()
+
+describe(&apos;defineGrid&apos;, function() {
+    describe(&apos;when not passed a function&apos;, function() {
+        it(`calls Honeycomb.extendHex() to create a default Hex factory`, function() {
+            const extendHexSpy = sinon.spy(extendHex)
+            const defineGrid = defineGridFactory({ extendHex: extendHexSpy })
+            defineGrid()
+            expect(extendHexSpy).to.have.been.called
+        })
+    })
+
+    it(&apos;returns a GridFactory with static methods&apos;, function() {
+        const GridFactory = defineGrid()
+        expect(GridFactory).to.be.a(&apos;function&apos;)
+        const staticProps = Object.keys(GridFactory)
+
+        expect(staticProps).to.eql([
+            &apos;Hex&apos;,
+            &apos;isValidHex&apos;,
+            &apos;pointToHex&apos;,
+            &apos;parallelogram&apos;,
+            &apos;triangle&apos;,
+            &apos;hexagon&apos;,
+            &apos;rectangle&apos;
+        ])
+    })
+
+    it(&apos;unbinds the Hex property (binds to undefined)&apos;, function() {
+        const boundHex = sinon.spy()
+        const bindSpy = sinon.stub().returns(boundHex)
+        const Hex = { bind: bindSpy }
+        const GridFactory = defineGrid(Hex)
+
+        expect(bindSpy).to.have.been.calledWith(/* undefined */) // passing undefined doesn&apos;t work...
+        expect(GridFactory.Hex).to.equal(boundHex)
+
+        GridFactory.Hex()
+        expect(boundHex).to.have.been.called
+    })
+})
+
+describe(&apos;GridFactory&apos;, function() {
+    it(&apos;returns a function with the Array prototype in its prototype chain&apos;, function() {
+        const instance = defineGrid()()
+        expect(Array.prototype.isPrototypeOf(instance)).to.be.true
+        expect(instance).to.have.property(&apos;map&apos;).that.equals(Array.prototype.map) // ducktype
+    })
+
+    it(&apos;returns a function with the Grid prototype&apos;, function() {
+        const GridFactory = defineGrid()
+        const prototype = Object.getPrototypeOf(GridFactory())
+        const prototypeProps = Object.keys(prototype)
+
+        expect(prototypeProps).to.eql([
+            &apos;get&apos;,
+            &apos;hexesBetween&apos;,
+            &apos;neighborsOf&apos;,
+            &apos;set&apos;
+        ])
+    })
+})
+
+describe(&apos;Grid creation&apos;, function() {
+    let GridFactory
+
+    beforeEach(function() {
+        GridFactory = defineGrid(Hex)
+        sinon.spy(Grid, &apos;isValidHex&apos;)
+    })
+
+    afterEach(() =&gt; {
+        Grid.isValidHex.restore()
+    })
+
+    describe(`when called with one or more arguments that aren&apos;t arrays`, () =&gt; {
+        it(&apos;calls Grid.isValidHex for each argument&apos;, () =&gt; {
+            const hex1 = Hex()
+            const hex2 = Hex(2, -4)
+            GridFactory(hex1, hex2)
+
+            expect(Grid.isValidHex).to.have.been.calledWith(hex1)
+            expect(Grid.isValidHex).to.have.been.calledWith(hex2)
+        })
+
+        describe(`when they&apos;re valid hexes`, function() {
+            it(&apos;returns a grid instance containing those hexes&apos;, function() {
+                const hex1 = Hex()
+                const hex2 = Hex(2, -4)
+                const result = GridFactory(hex1, hex2)
+
+                expect(result).to.have.lengthOf(2)
+                expect(result[0]).to.equal(hex1)
+                expect(result[1]).to.equal(hex2)
+            })
+        })
+
+        describe(`when they&apos;re valid hexes and other types`, function() {
+            it(&apos;returns a grid instance with only the valid hexes&apos;, function() {
+                const hex1 = Hex()
+                const hex2 = Hex(2, -4)
+                const result = GridFactory(null, &apos;string&apos;, hex1, {}, hex2, 1)
+
+                expect(result).to.have.lengthOf(2)
+                expect(result[0]).to.equal(hex1)
+                expect(result[1]).to.equal(hex2)
+            })
+        })
+    })
+
+    describe(`when called with an array`, () =&gt; {
+        it(&apos;calls Grid.isValidHex for each element in the array&apos;, () =&gt; {
+            const hex1 = Hex()
+            const hex2 = Hex(2, -4)
+            GridFactory([hex1, hex2])
+
+            expect(Grid.isValidHex).to.have.been.calledWith(hex1)
+            expect(Grid.isValidHex).to.have.been.calledWith(hex2)
+        })
+
+        describe(&apos;that is a valid grid&apos;, function() {
+            it(&apos;returns a copy of the grid&apos;, function() {
+                const grid = GridFactory(Hex(), Hex())
+                const result = GridFactory(grid)
+
+                expect(result).to.eql(grid)
+                expect(result).to.not.equal(grid)
+            })
+        })
+
+        describe(&apos;containing valid hexes&apos;, function() {
+            it(&apos;returns a grid instance containing those hexes&apos;, function() {
+                const hex1 = Hex()
+                const hex2 = Hex(2, -4)
+                const result = GridFactory([hex1, hex2])
+
+                expect(result).to.have.lengthOf(2)
+                expect(result[0]).to.equal(hex1)
+                expect(result[1]).to.equal(hex2)
+            })
+        })
+
+        describe(&apos;containing valid hexes and other types&apos;, function() {
+            it(&apos;returns a grid instance with only the valid hexes&apos;, function() {
+                const hex1 = Hex()
+                const hex2 = Hex(2, -4)
+                const result = GridFactory([null, &apos;string&apos;, hex1, {}, hex2, 1])
+
+                expect(result).to.have.lengthOf(2)
+                expect(result[0]).to.equal(hex1)
+                expect(result[1]).to.equal(hex2)
+            })
+        })
+    })
+})
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

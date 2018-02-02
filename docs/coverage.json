@@ -1,0 +1,156 @@
+{
+  "coverage": "59.52%",
+  "expectCount": 84,
+  "actualCount": 50,
+  "files": {
+    "src/grid/class.js": {
+      "expectCount": 10,
+      "actualCount": 9,
+      "undocumentLines": [
+        4
+      ]
+    },
+    "src/grid/class.spec.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        10
+      ]
+    },
+    "src/grid/index.js": {
+      "expectCount": 2,
+      "actualCount": 1,
+      "undocumentLines": [
+        9
+      ]
+    },
+    "src/grid/index.spec.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        11,
+        12,
+        13
+      ]
+    },
+    "src/grid/prototype.js": {
+      "expectCount": 4,
+      "actualCount": 3,
+      "undocumentLines": [
+        35
+      ]
+    },
+    "src/grid/prototype.spec.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        11,
+        12,
+        13
+      ]
+    },
+    "src/grid/statics.js": {
+      "expectCount": 6,
+      "actualCount": 6,
+      "undocumentLines": []
+    },
+    "src/grid/statics.spec.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        11,
+        12
+      ]
+    },
+    "src/hex/constants.js": {
+      "expectCount": 5,
+      "actualCount": 1,
+      "undocumentLines": [
+        36,
+        41,
+        50,
+        59
+      ]
+    },
+    "src/hex/index.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        9,
+        11,
+        15,
+        275
+      ]
+    },
+    "src/hex/index.spec.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        10,
+        11
+      ]
+    },
+    "src/hex/prototype.js": {
+      "expectCount": 23,
+      "actualCount": 21,
+      "undocumentLines": [
+        4,
+        336
+      ]
+    },
+    "src/hex/prototype.spec.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        12,
+        13,
+        14
+      ]
+    },
+    "src/hex/statics.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/honeycomb.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/point/index.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/point/index.spec.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        9,
+        10
+      ]
+    },
+    "src/point/prototype.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        1,
+        13,
+        25,
+        37
+      ]
+    },
+    "src/point/prototype.spec.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        8
+      ]
+    },
+    "src/utils.js": {
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
+    }
+  }
+}

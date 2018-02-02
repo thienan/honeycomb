@@ -8,6 +8,9 @@ import * as methods from './prototype'
 
 const Point = PointFactory({ ensureXY })
 
+/**
+ * @private
+ */
 export default function defineGridFactory({ extendHex }) {
     /**
      * @function defineGrid

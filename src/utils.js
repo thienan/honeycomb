@@ -75,6 +75,9 @@ export function compassToNumberDirection(value, orientation) {
     }[orientation][value]
 }
 
+/**
+ * @private
+ */
 export function ensureXY(x, y) {
     if (!isNumber(x) && !isNumber(y)) {
         x = y = 0

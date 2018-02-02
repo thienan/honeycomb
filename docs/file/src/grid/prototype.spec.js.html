@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/grid/prototype.spec.js | honeycomb-grid</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Create hexagon grids easily. Written in javascript."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="honeycomb-grid"><meta property="twitter:description" content="Create hexagon grids easily. Written in javascript."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/flauwekeul/honeycomb"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-COMPASS_DIRECTION">COMPASS_DIRECTION</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#grid">grid</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get">get</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hexesBetween">hexesBetween</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setFactory">setFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-grid">grid</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#hex">hex</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-extendHexFactory">extendHexFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cartesianToCube">cartesianToCube</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-coordinates">coordinates</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cube">cube</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cubeToCartesian">cubeToCartesian</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-distance">distance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-equalsFactory">equalsFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-height">height</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isFlat">isFlat</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isPointy">isPointy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-nudge">nudge</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-oppositeCornerDistance">oppositeCornerDistance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-oppositeSideDistance">oppositeSideDistance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toString">toString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-width">width</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-thirdCoordinate">thirdCoordinate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DIAGONAL_DIRECTION_COORDINATES">DIAGONAL_DIRECTION_COORDINATES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DIRECTION_COORDINATES">DIRECTION_COORDINATES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EPSILON">EPSILON</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-OFFSET">OFFSET</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ORIENTATION">ORIENTATION</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-staticMethods">staticMethods</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-hex">hex</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#point">point</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-PointFactory">PointFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addFactory">addFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-divideFactory">divideFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-multiplyFactory">multiplyFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-subtractFactory">subtractFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-point">point</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/grid/prototype.spec.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/* eslint-env mocha */
+
+import { expect } from &apos;chai&apos;
+import sinon from &apos;sinon&apos;
+
+import { ensureXY, signedModulo, compassToNumberDirection } from &apos;../utils&apos;
+import extendHexFactory from &apos;../hex&apos;
+import defineGridFactory from &apos;./&apos;
+import * as methods from &apos;./prototype&apos;
+
+const extendHex = extendHexFactory({ ensureXY })
+const Hex = extendHex()
+const GridFactory = defineGridFactory({ extendHex })(Hex)
+
+describe(&apos;get&apos;, () =&gt; {
+    it(&apos;accepts a number or a point&apos;, () =&gt; {
+        const targetHex = Hex(3, -2)
+        const grid = GridFactory(targetHex)
+
+        expect(grid.get(0)).to.equal(targetHex)
+        expect(grid.get(Hex(3, -2))).to.equal(targetHex)
+        expect(grid.get([3, -2])).to.equal(targetHex)
+    })
+
+    describe(&apos;when not present in the grid&apos;, () =&gt; {
+        it(&apos;returns the passed hex&apos;, () =&gt; {
+            const targetHex = Hex(3, -2)
+            const grid = GridFactory(targetHex)
+
+            expect(grid.get(Hex())).to.be.undefined
+        })
+    })
+})
+
+describe(&apos;set&apos;, () =&gt; {
+    let set, isValidHex, targetHex, newHex, grid
+
+    beforeEach(() =&gt; {
+        isValidHex = sinon.stub().returns(true)
+        set = methods.setFactory({ Grid: { isValidHex } })
+        targetHex = Hex(3, -2)
+        newHex = Hex(1, 1)
+        grid = GridFactory(targetHex)
+    })
+
+    it(&apos;accepts a number as the first parameter&apos;, () =&gt; {
+        expect(grid.set(0, newHex)).to.have.lengthOf(1)
+            .and.contain.hexes([newHex])
+    })
+
+    it(&apos;accepts a point as the first parameter&apos;, () =&gt; {
+        expect(grid.set([3, -2], newHex)).to.have.lengthOf(1)
+            .and.contain.hexes([newHex])
+    })
+
+    describe(&apos;when the hex that must be replaced is present in the grid&apos;, () =&gt; {
+        it(&apos;replaces the hex with the new hex and returns the updated grid&apos;, () =&gt; {
+            const result = set.call(grid, targetHex, newHex)
+
+            expect(result).to.have.lengthOf(1)
+                .and.contain.hexes([newHex])
+                .and.not.contain.hexes([targetHex])
+            expect(grid).to.eql(result)
+        })
+
+        describe(&apos;when the new hex is invalid&apos;, () =&gt; {
+            it(&apos;does not replace the hex and returns the grid&apos;, () =&gt; {
+                isValidHex.returns(false)
+                const newHex = &apos;invalid hex&apos;
+                expect(set.call(grid, targetHex, newHex)).to.eql(grid)
+            })
+        })
+    })
+
+    describe(&apos;when the hex that must be replaced is not present in the grid&apos;, () =&gt; {
+        it(`pushes the new hex and returns the grid`, () =&gt; {
+            const startHex = Hex(-9, 9)
+            const grid = GridFactory(startHex)
+            const result = set.call(grid, targetHex, newHex)
+
+            expect(result).to.have.lengthOf(2)
+                .and.contain.hexes([startHex, newHex])
+                .and.not.contain.hexes([targetHex])
+            expect(grid).to.eql(result)
+        })
+
+        describe(&apos;when the new hex is invalid&apos;, () =&gt; {
+            it(&apos;does not push the new hex and returns the grid&apos;, () =&gt; {
+                isValidHex.returns(false)
+                const startHex = Hex(-9, 9)
+                const newHex = &apos;invalid hex&apos;
+                const grid = GridFactory(startHex)
+
+                expect(set.call(grid, targetHex, newHex)).to.eql(grid)
+            })
+        })
+    })
+})
+
+describe(&apos;hexesBetween&apos;, () =&gt; {
+    it(&apos;calls the passed firstHex.distance()&apos;, () =&gt; {
+        const distance = sinon.stub()
+        const firstHex = { distance }
+        const lastHex = &apos;last hex&apos;
+        methods.hexesBetween(firstHex, lastHex)
+
+        expect(distance).to.have.been.calledWith(lastHex)
+    })
+
+    it(&apos;calls firstHex.nudge(), firstHex.lerp(), lastHex.nudge() and firstHex.round() for each hex between firstHex and lastHex&apos;, () =&gt; {
+        const round = sinon.stub().returns(&apos;round result&apos;)
+        const lerp = sinon.stub().returns({ round })
+        const firstHexNudge = sinon.stub().returns({ lerp })
+        const lastHexNudge = sinon.stub().returns(&apos;last hex nudge result&apos;)
+        const distance = sinon.stub().returns(2)
+        const firstHex = { distance, nudge: firstHexNudge }
+        const lastHex = { nudge: lastHexNudge }
+        const get = sinon.stub().returns(&apos;get result&apos;)
+        const hexesBetween = methods.hexesBetween.bind({ get })
+        const result = hexesBetween(firstHex, lastHex)
+
+        expect(firstHexNudge).to.have.callCount(3)
+        expect(lerp).to.have.callCount(3)
+        expect(lerp).to.always.have.been.calledWith(&apos;last hex nudge result&apos;, sinon.match.number)
+        expect(lastHexNudge).to.have.callCount(3)
+        expect(round).to.have.callCount(3)
+        expect(get).to.have.callCount(3)
+        expect(get).to.always.have.been.calledWith(&apos;round result&apos;)
+        expect(result).to.eql([&apos;get result&apos;, &apos;get result&apos;, &apos;get result&apos;])
+    })
+
+    describe(&apos;when all hexes between firstHex and lastHex are present in the grid&apos;, () =&gt; {
+        it(&apos;returns the hexes in a straight line, inclusive&apos;, () =&gt; {
+            const grid = GridFactory.rectangle({ width: 4, height: 2 })
+            const result = grid.hexesBetween(Hex(), Hex(3, 1))
+
+            expect(result).to.be.an(&apos;array&apos;).that.has.a.lengthOf(5)
+            expect(result[0]).to.equal(grid[0])
+            expect(result[1]).to.equal(grid[1])
+            expect(result[2]).to.equal(grid[2])
+            expect(result[3]).to.equal(grid[6])
+            expect(result[4]).to.equal(grid[7])
+        })
+    })
+
+    describe(&apos;when some hexes between firstHex and lastHex are missing in the grid&apos;, () =&gt; {
+        it(&apos;returns any present hexes in a straight line, inclusive&apos;, () =&gt; {
+            const grid = GridFactory.rectangle({ width: 3, height: 2 })
+            const firstHex = Hex()
+            const lastHex = Hex(3, 1)
+            const result = grid.hexesBetween(firstHex, lastHex)
+
+            expect(result).to.be.an(&apos;array&apos;).that.has.a.lengthOf(5)
+            expect(result[0]).to.equal(grid[0])
+            expect(result[1]).to.equal(grid[1])
+            expect(result[2]).to.equal(grid[2])
+            expect(result[3]).to.equal(grid[5])
+            expect(result[4]).to.be.undefined
+        })
+    })
+})
+
+describe(&apos;neighborsOf&apos;, () =&gt; {
+    let neighborsOf, isValidHex, signedModuloSpy, compassToNumberDirectionSpy, cubeToCartesian, hex, get
+
+    beforeEach(() =&gt; {
+        isValidHex = sinon.stub().returns(true)
+        signedModuloSpy = sinon.spy(signedModulo)
+        compassToNumberDirectionSpy = sinon.spy(compassToNumberDirection)
+        cubeToCartesian = sinon.stub().returns(&apos;cubeToCartesian result&apos;)
+        hex = { cubeToCartesian, q: 1, r: 1 }
+        get = sinon.spy()
+        neighborsOf = methods.neighborsOfFactory({
+            Grid: { isValidHex },
+            signedModulo: signedModuloSpy,
+            compassToNumberDirection: compassToNumberDirectionSpy
+        }).bind({ get })
+    })
+
+    afterEach(() =&gt; {
+        cubeToCartesian.reset()
+    })
+
+    it(&apos;throws when no hex is passed&apos;, () =&gt; {
+        isValidHex.returns(false)
+        expect(() =&gt; neighborsOf()).to.throw(`Invalid hex: undefined.`)
+    })
+
+    it(&apos;accepts 3 parameters&apos;, () =&gt; {
+        neighborsOf(hex, [2, 4], true)
+        expect(cubeToCartesian.getCall(0)).to.have.been.calledWith({ q: 0, r: 3 })
+        expect(cubeToCartesian.getCall(1)).to.have.been.calledWith({ q: 0, r: 0 })
+    })
+
+    it(&apos;calls grid.get() with the result of hex.cubeToCartesian() for each direction&apos;, () =&gt; {
+        neighborsOf(hex)
+        expect(get.callCount).to.equal(6)
+        expect(get).to.always.have.been.calledWith(&apos;cubeToCartesian result&apos;)
+    })
+
+    describe(`when called with no direction or &apos;all&apos; directions`, () =&gt; {
+        it(`calls the passed hex.cubeToCartesian() with the sum of the passed hex&apos;s cube coordinates and all direction coordinates`, () =&gt; {
+            neighborsOf(hex)
+            expect(cubeToCartesian.getCall(0).args[0]).to.eql({ q: 2, r: 1 })
+            expect(cubeToCartesian.getCall(1).args[0]).to.eql({ q: 1, r: 2 })
+            expect(cubeToCartesian.getCall(2).args[0]).to.eql({ q: 0, r: 2 })
+            expect(cubeToCartesian.getCall(3).args[0]).to.eql({ q: 0, r: 1 })
+            expect(cubeToCartesian.getCall(4).args[0]).to.eql({ q: 1, r: 0 })
+            expect(cubeToCartesian.getCall(5).args[0]).to.eql({ q: 2, r: 0 })
+
+            cubeToCartesian.reset()
+
+            neighborsOf(hex, &apos;all&apos;)
+            expect(cubeToCartesian.getCall(0).args[0]).to.eql({ q: 2, r: 1 })
+            expect(cubeToCartesian.getCall(1).args[0]).to.eql({ q: 1, r: 2 })
+            expect(cubeToCartesian.getCall(2).args[0]).to.eql({ q: 0, r: 2 })
+            expect(cubeToCartesian.getCall(3).args[0]).to.eql({ q: 0, r: 1 })
+            expect(cubeToCartesian.getCall(4).args[0]).to.eql({ q: 1, r: 0 })
+            expect(cubeToCartesian.getCall(5).args[0]).to.eql({ q: 2, r: 0 })
+        })
+    })
+
+    describe(&apos;when called with directions outside 0..5&apos;, () =&gt; {
+        it(`passed them to signedModulo`, () =&gt; {
+            neighborsOf(hex, -1)
+            expect(signedModuloSpy).to.have.been.calledWith(-1, 6)
+
+            signedModuloSpy.reset()
+
+            neighborsOf(hex, 3)
+            expect(signedModuloSpy).not.to.have.been.called
+        })
+    })
+
+    describe(&apos;when called with a single number direction&apos;, () =&gt; {
+        it(`calls the passed hex.cubeToCartesian() with the sum of the passed hex&apos;s cube coordinates and the passed direction coordinate`, () =&gt; {
+            neighborsOf(hex, 2)
+            expect(cubeToCartesian.callCount).to.equal(1)
+            expect(cubeToCartesian.getCall(0).args[0]).to.eql({ q: 0, r: 2 })
+        })
+    })
+
+    describe(&apos;when called with compass direction(s)&apos;, () =&gt; {
+        it(&apos;calls compassToNumberDirection&apos;, () =&gt; {
+            hex.orientation = &apos;pointy&apos;
+            neighborsOf(hex, &apos;NW&apos;)
+
+            expect(compassToNumberDirectionSpy).to.have.been.calledWith(&apos;NW&apos;, &apos;pointy&apos;)
+        })
+    })
+
+    describe(&apos;with the diagonal flag enabled&apos;, () =&gt; {
+        it(`calls the passed hex.cubeToCartesian() with the sum of the passed hex&apos;s cube coordinates and all direction coordinates`, () =&gt; {
+            neighborsOf(hex, &apos;all&apos;, true)
+            expect(cubeToCartesian.getCall(0).args[0]).to.eql({ q: 3, r: 0 })
+            expect(cubeToCartesian.getCall(1).args[0]).to.eql({ q: 2, r: 2 })
+            expect(cubeToCartesian.getCall(2).args[0]).to.eql({ q: 0, r: 3 })
+            expect(cubeToCartesian.getCall(3).args[0]).to.eql({ q: -1, r: 2 })
+            expect(cubeToCartesian.getCall(4).args[0]).to.eql({ q: 0, r: 0 })
+            expect(cubeToCartesian.getCall(5).args[0]).to.eql({ q: 2, r: -1 })
+        })
+    })
+
+    describe(&apos;when all neighbors are present in the grid&apos;, () =&gt; {
+        it(&apos;returns all neighbors&apos;, () =&gt; {
+            const grid = GridFactory.hexagon({ radius: 1 })
+            const result = grid.neighborsOf(Hex())
+
+            expect(result).to.be.an(&apos;array&apos;).that.has.a.lengthOf(6)
+            expect(result[0]).to.equal(grid[6])
+            expect(result[1]).to.equal(grid[4])
+            expect(result[2]).to.equal(grid[1])
+            expect(result[3]).to.equal(grid[0])
+            expect(result[4]).to.equal(grid[2])
+            expect(result[5]).to.equal(grid[5])
+        })
+    })
+
+    describe(&apos;when some neighbors are present in the grid&apos;, () =&gt; {
+        it(&apos;returns only the present neighbors&apos;, () =&gt; {
+            const grid = GridFactory.hexagon({ radius: 1 })
+            const hex = Hex(1, 0)
+            const result = grid.neighborsOf(hex)
+
+            expect(result).to.be.an(&apos;array&apos;).that.has.a.lengthOf(3)
+            expect(result[0]).to.equal(grid[4])
+            expect(result[1]).to.equal(grid[3])
+            expect(result[2]).to.equal(grid[5])
+        })
+    })
+})
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
